@@ -3,27 +3,30 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'cxz.click'
+apply plugin: 'cxz.auto_track'
+
 buildscript {
-    repositories{
+    repositories {
         google()
         mavenCentral()
         //自定义插件仓库地址
-        maven {url '../repo'}
+        maven { url '../repo' }
     }
     dependencies {
         //加载自定义插件 group + module + version
         classpath 'cxz.plugin:click_plugin:1.0.0'
+        classpath 'cxz.plugin:auto_track_plugin:1.0.0'
     }
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "31.0.0"
 
     defaultConfig {
         applicationId "com.cxz.asmsample"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -63,5 +66,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(':auto_track_sdk')
 
 }

@@ -15,3 +15,5 @@
 rootProject.name = "ASMSample"
 include ':app'
 include ':click_plugin'
+include ':auto_track_plugin'
+include ':auto_track_sdk'
